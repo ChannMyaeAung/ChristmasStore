@@ -1,9 +1,18 @@
 import "./App.css";
+import Accordion from "./components/Accordion/Accordion";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import Navbar from "./components/Navbar/Navbar";
+import Products from "./components/Products/Products";
 
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div id="App">
+      <Navbar />
+      <Hero />
+      <Products />
+      <Accordion />
+      <Footer />
     </div>
   );
 }
