@@ -14,7 +14,7 @@ const MobileToggle = () => {
   return (
     <motion.div
       aria-label="mobile menu toggle"
-      className="z-[999] relative block md:hidden"
+      className="relative z-50 block md:hidden"
       animate={open ? "open" : "closed"}
     >
       <button

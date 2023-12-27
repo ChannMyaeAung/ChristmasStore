@@ -72,11 +72,11 @@ const Hero = () => {
             <div
               className={`grid ${
                 showIcons[index] ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              } transition-[grid-template-rows] items-center bg-slate-50 duration-500 overflow-hidden`}
+              } transition-[grid-template-rows] items-center bg-slate-50 duration-500 overflow-hidden `}
             >
-              <div className="flex flex-wrap items-center w-full h-full overflow-hidden border">
+              <div className="flex flex-wrap items-center w-full h-full overflow-hidden">
                 {heroItems.map((item) => (
-                  <figure key={item.id} className="w-10 h-10 m-2 border">
+                  <figure key={item.id} className="w-6 h-6 m-2 sm:w-10 sm:h-10">
                     <img
                       src={item.icon}
                       alt={item.alt}
