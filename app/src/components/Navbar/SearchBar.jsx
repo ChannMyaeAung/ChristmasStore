@@ -4,11 +4,11 @@ import React from "react";
 /* Responsible for searching items */
 const SearchBar = () => {
   return (
-    <form className="relative">
+    <form className="relative flex-grow w-full">
       <input
         type="text"
         placeholder="Search"
-        className="py-2 pl-10 border rounded-full bg-slate-100"
+        className="w-full py-2 pl-10 border rounded-full bg-slate-100"
       />
       <i className="absolute top-2 left-1.5">
         <svg

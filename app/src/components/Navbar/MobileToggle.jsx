@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { navLinks } from "./navLinks";
 import NavItems from "./NavItems";
 
+/* Responsible for toggling nav menu on small screens */
 const MobileToggle = () => {
   const [open, setOpen] = useState(false);
 
@@ -14,7 +14,7 @@ const MobileToggle = () => {
   return (
     <motion.div
       aria-label="mobile menu toggle"
-      className="z-[999] relative"
+      className="z-[999] relative block md:hidden"
       animate={open ? "open" : "closed"}
     >
       <button
@@ -54,11 +54,10 @@ const MobileToggle = () => {
         </svg>
       </button>
       {/* Nav Links Modal on mobile screens */}
-
       <motion.div
         ref={navMenuRef}
         animate={open ? "open" : "closed"}
-        className="fixed left-0 right-0 top-auto w-11/12 max-w-xs mx-auto overflow-hidden rounded-md shadow-lg bg-sky-200 bottom-1/2 md:hidden"
+        className="fixed left-0 right-0 w-11/12 max-w-xs mx-auto overflow-hidden rounded-md shadow-lg top-32 bg-cyan-200 md:hidden"
         variants={{
           closed: { opacity: 0, y: -100, pointerEvents: "none" },
           open: { opacity: 1, y: 0, x: 0, pointerEvents: "auto" },
@@ -69,11 +68,7 @@ const MobileToggle = () => {
         aria-expanded={open}
         aria-hidden={open}
       >
-        <motion.ul className="flex flex-col items-center py-12 font-bold rounded-sm gap-7 text-DarkBlue">
-          {navLinks.map((link) => {
-            return <NavItems key={link.id} link={link} />;
-          })}
-        </motion.ul>
+        <NavItems open={open} />
       </motion.div>
     </motion.div>
   );

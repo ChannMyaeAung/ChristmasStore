@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Announcement from "./Announcement";
 import MobileToggle from "./MobileToggle";
 import SearchBar from "./SearchBar";
+import NavItems from "./NavItems";
 
+/* Main Navbar Component */
 const Navbar = () => {
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
+
   return (
     <header className="relative flex flex-col">
       {/* Sticker Info at the top of the page */}
-      <Announcement />
+      <Announcement
+        showAnnouncement={showAnnouncement}
+        setShowAnnouncement={setShowAnnouncement}
+      />
 
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-3 py-3 mt-16 mb-6">
+      <nav
+        className={`flex items-center justify-between px-3 py-1 ${
+          showAnnouncement ? "mt-16" : "mt-0"
+        }`}
+      >
         {/* Navbar Left: Logo & SearchBar */}
         <div id="nav__left" className="flex items-center gap-3">
-          <div id="Logo" className="hidden text-2xl md:block">
+          <div id="Logo" className="hidden text-2xl sm:block">
             iCodeMas
           </div>
 
@@ -24,6 +35,10 @@ const Navbar = () => {
         <div id="nav__right" className="relative flex items-center gap-3">
           {/* Mobile Menu Toggle */}
           <MobileToggle />
+          {/* Desktop Links */}
+          <div>
+            <NavItems />
+          </div>
           {/* Shopping Bag/Cart */}
           <div>
             <button className="relative">
