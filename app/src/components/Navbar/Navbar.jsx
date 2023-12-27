@@ -20,7 +20,7 @@ const Navbar = () => {
       <nav
         className={`flex items-center justify-between px-3 py-1 ${
           showAnnouncement ? "mt-16" : "mt-0"
-        }`}
+        }`} // when the announcement is hidden, remove the margin to move the navbar to the top of the page.
       >
         {/* Navbar Left: Logo & SearchBar */}
         <div id="nav__left" className="flex items-center gap-3">

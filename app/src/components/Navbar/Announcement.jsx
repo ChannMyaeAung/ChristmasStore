@@ -5,7 +5,7 @@ const Announcement = ({ showAnnouncement, setShowAnnouncement }) => {
   return (
     <div
       id="sticker__info"
-      className={`fixed top-0 w-full mb-16 bg-rose-200 ${
+      className={`fixed z-[999] top-0 w-full mb-16 bg-rose-200 ${
         showAnnouncement ? "block" : "hidden"
       }`}
     >
