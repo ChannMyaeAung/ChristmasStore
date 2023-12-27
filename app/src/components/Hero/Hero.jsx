@@ -2,6 +2,7 @@ import { useState } from "react";
 import tree from "../../assets/tree.png";
 import { heroContent, heroItems } from "./items";
 import { motion } from "framer-motion";
+import Santa from "./Santa";
 
 const Hero = () => {
   // Create an array of state values, one for each item in heroContent
@@ -28,14 +29,14 @@ const Hero = () => {
     });
   };
   return (
-    <section id="hero" className="container flex flex-col gap-4 mx-auto">
+    <section id="hero" className="container flex flex-col gap-4 px-4 mx-auto">
       {heroContent.map((item, index) => (
         <motion.div
           key={item.id}
           onClick={() => toggleIconVisibility(index)}
           /* onMouseEnter={() => displayIcons(index)}
           onMouseLeave={() => hideIcons(index)} */
-          className="relative w-11/12 h-full mx-auto cursor-pointer"
+          className="relative w-full h-full mx-auto cursor-pointer"
         >
           {/* Image */}
           <figure className="mx-auto rounded-sm">
@@ -89,6 +90,7 @@ const Hero = () => {
           </div>
         </motion.div>
       ))}
+      <Santa />
     </section>
   );
 };
