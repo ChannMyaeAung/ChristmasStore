@@ -28,7 +28,7 @@ const Santa = () => {
       </div>
 
       {/* City Scape */}
-      <figure className="absolute bottom-0 right-0 w-20 h-20 scale-150 top-[4.5rem] lg:top-[2.7rem] lg:w-40 lg:h-40">
+      <figure className="absolute bottom-0 right-4 w-20 h-20 scale-150 bg-center top-[4.5rem] lg:top-[2.7rem] lg:w-40 lg:h-40">
         <img
           src={cityscape}
           alt="Christmas Cityscape"
