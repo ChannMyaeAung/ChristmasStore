@@ -7,7 +7,7 @@ import Products from "./components/Products/Products";
 
 function App() {
   return (
-    <div id="App">
+    <div id="App" className="container px-4 mx-auto">
       <Navbar />
       <Hero />
       <Products />

@@ -29,10 +29,7 @@ const Hero = () => {
     });
   };
   return (
-    <section
-      id="hero"
-      className="container flex flex-col gap-4 px-4 mx-auto overflow-hidden"
-    >
+    <section id="hero" className="flex flex-col gap-4 overflow-hidden ">
       <div className="flex flex-col w-full gap-6 md:flex-row">
         {heroContent.map((item, index) => (
           <motion.div

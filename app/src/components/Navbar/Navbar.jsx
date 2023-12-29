@@ -18,7 +18,7 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`flex items-center justify-between px-3 py-1 gap-3 ${
+        className={`flex items-center justify-between py-1 gap-3 ${
           showAnnouncement ? "mt-16" : "mt-0"
         }`} // when the announcement is hidden, remove the margin to move the navbar to the top of the page.
       >
