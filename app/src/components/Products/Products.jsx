@@ -13,6 +13,7 @@ const Products = () => {
         <button className="text-sm font-semibold uppercase">Filters Off</button>
       </div>
 
+      {/* Filters */}
       <div className="flex items-center justify-between w-full">
         <ProductsOrder />
         {/* Select Views */}
@@ -20,6 +21,8 @@ const Products = () => {
           <ViewSelection />
         </div>
       </div>
+
+      {/* Products */}
     </section>
   );
 };
