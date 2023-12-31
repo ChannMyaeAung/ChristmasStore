@@ -1,6 +1,7 @@
 import React from "react";
 import ViewSelection from "./ViewSelection";
 import ProductsOrder from "./ProductsOrder";
+import ProductItems from "./ProductItems";
 
 const Products = () => {
   return (
@@ -14,15 +15,18 @@ const Products = () => {
       </div>
 
       {/* Filters */}
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full mt-6">
         <ProductsOrder />
         {/* Select Views */}
-        <div className="flex gap-3 border">
+        <div className="flex gap-3">
           <ViewSelection />
         </div>
       </div>
 
       {/* Products */}
+      <div className="mt-10">
+        <ProductItems />
+      </div>
     </section>
   );
 };

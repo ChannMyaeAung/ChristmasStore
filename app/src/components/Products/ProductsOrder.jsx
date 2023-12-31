@@ -5,9 +5,9 @@ const ProductsOrder = () => {
     <>
       <div
         id="order__by"
-        className="flex items-center gap-3 px-3 transition-all border rounded-md cursor-pointer border-sky-200 hover:bg-sky-200"
+        className="flex items-center gap-3 px-3 py-1 transition-all border rounded-md cursor-pointer border-sky-200 hover:bg-sky-200"
       >
-        <p>Order By</p>
+        <p className="text-sm font-medium uppercase">Order By</p>
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
