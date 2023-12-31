@@ -10,12 +10,12 @@ const SingleAccordion = ({ accordion }) => {
   };
 
   return (
-    <article className="flex flex-col p-3 transition-all border-8 cursor-pointer rounded-xl border-sky-300 shadow-sky-200 bg-sky-50 hover:bg-sky-200">
+    <article
+      className="flex flex-col p-3 transition-all border-4 cursor-pointer rounded-xl border-sky-300 shadow-sky-200 bg-sky-50 hover:bg-sky-200"
+      onClick={() => toggleAnswer(accordion.id)}
+    >
       {/* Question Starts*/}
-      <div
-        className="flex items-center justify-between gap-3"
-        onClick={() => toggleAnswer(accordion.id)}
-      >
+      <div className="flex items-center justify-between gap-3">
         <h2 className="text-lg">{accordion.question}</h2>
         <motion.button
           className={` bg-sky-300 rounded-md p-0.5 duration-300 hover:bg-cyan-700 ${
