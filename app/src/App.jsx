@@ -7,13 +7,19 @@ import Products from "./components/Products/Products";
 
 function App() {
   return (
-    <div id="App" className="container px-4 mx-auto">
-      <Navbar />
-      <Hero />
-      <Products />
-      <Accordion />
-      <Footer />
-    </div>
+    <>
+      <div id="App" className="container px-4 mx-auto">
+        <Navbar />
+        <Hero />
+        <Products />
+      </div>
+      <section id="accordion" className="bg-pink-200">
+        <Accordion />
+      </section>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 
