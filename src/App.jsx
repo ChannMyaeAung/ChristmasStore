@@ -18,7 +18,7 @@ function App() {
       </section>
       <footer
         id="footer"
-        className="bg-[url('./assets/Footer/footer_bg.png')] bg-center bg-cover"
+        className="bg-[url('./assets/Footer/footer_bg.png')] bg-center bg-cover relative"
       >
         <Footer />
       </footer>
