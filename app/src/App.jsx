@@ -16,7 +16,10 @@ function App() {
       <section id="accordion" className="bg-pink-200">
         <Accordion />
       </section>
-      <footer>
+      <footer
+        id="footer"
+        className="bg-[url('./assets/Footer/footer_bg.png')] bg-center bg-cover"
+      >
         <Footer />
       </footer>
     </>
