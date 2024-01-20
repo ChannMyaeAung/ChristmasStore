@@ -17,7 +17,7 @@ const Santa = () => {
         </figure>
 
         {/* Text Container */}
-        <div className="absolute right-auto top-4 left-14">
+        <div className="absolute right-auto top-4 left-14 lg:left-[4.5rem]">
           <p
             style={{ boxShadow: "3px 2px 0px 3px rgba(0,0,0,0.75)" }}
             className="p-1 sm:p-2 text-[12px] sm:text-sm font-bold uppercase border-2 border-black rounded-t-lg rounded-bl-none rounded-br-lg bg-slate-50"

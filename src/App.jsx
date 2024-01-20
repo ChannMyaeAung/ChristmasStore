@@ -13,7 +13,7 @@ function App() {
         <Hero />
         <Products />
       </div>
-      <section id="accordion" className="bg-pink-200">
+      <section id="accordion" className="bg-red-600">
         <Accordion />
       </section>
       <footer

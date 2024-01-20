@@ -9,8 +9,10 @@ const Accordion = () => {
         id="accordion__heading"
         className="flex flex-col gap-3 mt-3 text-center"
       >
-        <h1 className="text-2xl font-bold">Frequently asked questions</h1>
-        <p className="text-base text-gray-500 md:text-base">
+        <h1 className="text-2xl font-semibold text-white">
+          Frequently asked questions
+        </h1>
+        <p className="text-base text-neutral-100 md:text-base">
           Have questions? Explore our Frequently Asked Questions section for
           quick answers. If your questions isn't answered, feel free to reach
           out to our helpful support team.

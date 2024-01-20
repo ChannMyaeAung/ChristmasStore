@@ -5,24 +5,22 @@ import { navLinks } from "./navLinks";
 const variants = {
   open: {
     transition: {
-      staggerChildren: 0.1,
+      opacity: 1,
+      staggerChildren: 0.25,
     },
   },
   closed: {
     transition: {
-      staggerChildren: 0.05,
-      staggerDirection: -1,
+      opacity: 0,
     },
   },
 };
 
 const itemVariants = {
   open: {
-    y: 0,
     opacity: 1,
   },
   closed: {
-    y: 50,
     opacity: 0,
   },
 };
@@ -30,21 +28,27 @@ const itemVariants = {
 /* Nav Links for both mobile and desktop versions */
 const NavItems = ({ open }) => {
   return (
-    <Fragment>
+    <>
       {/* Mobile Nav Links */}
       <motion.ul
         variants={variants}
-        className="flex flex-col items-center py-12 overflow-hidden font-bold text-black rounded-sm md:flex-row gap-7"
+        className="flex flex-col items-center py-12 overflow-hidden font-medium text-black rounded-sm md:flex-row gap-7"
       >
-        {navLinks.map((link) => (
+        {navLinks.map((link, index) => (
           <motion.li
             key={link.id}
             variants={itemVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            transition={{
+              delay: 0.25 * index,
+              ease: "easeIn",
+              duration: 0.5,
+            }}
+            viewport={{ amount: 0 }}
             className={`${
               open ? "flex " : "hidden"
-            } items-center gap-3 transition-all cursor-pointer md:flex`}
+            } items-center text-white gap-3 transition-all cursor-pointer translate-y-0 md:flex`}
           >
             {link.icon ? (
               <i className="w-6 h-6">
@@ -60,7 +64,7 @@ const NavItems = ({ open }) => {
           </motion.li>
         ))}
       </motion.ul>
-    </Fragment>
+    </>
   );
 };
 

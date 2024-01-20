@@ -57,7 +57,7 @@ const MobileToggle = () => {
       <motion.div
         ref={navMenuRef}
         animate={open ? "open" : "closed"}
-        className="fixed left-0 right-0 w-11/12 max-w-xs mx-auto overflow-hidden rounded-md shadow-lg top-32 bg-cyan-200 md:hidden"
+        className="fixed left-0 right-0 w-11/12 max-w-xs mx-auto overflow-hidden bg-green-500 rounded-md shadow-lg top-40 md:hidden"
         variants={{
           closed: { opacity: 0, y: -100, pointerEvents: "none" },
           open: { opacity: 1, y: 0, x: 0, pointerEvents: "auto" },

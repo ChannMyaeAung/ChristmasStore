@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 /* Announcement at the top of the page */
 const Announcement = ({ showAnnouncement, setShowAnnouncement }) => {
   return (
     <div
       id="sticker__info"
-      className={`fixed z-[999] top-0 left-0 w-full mb-16 bg-rose-200 ${
+      className={`fixed z-[999] top-0 left-0 w-full mb-16 bg-red-500 text-neutral-200 ${
         showAnnouncement ? "block" : "hidden"
       }`}
     >
