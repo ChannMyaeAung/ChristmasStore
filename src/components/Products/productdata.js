@@ -18,6 +18,7 @@ export const products = [
     img: christmasTree,
     status: "new",
     price: 19.99,
+    originalPrice: null,
     desc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis officia sit sed tenetur temporibus! Voluptatibus provident quos aperiam temporibus ea molestiae, eaque deleniti nesciunt similique nisi laborum unde libero itaque!`,
   },
   {

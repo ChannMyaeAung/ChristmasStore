@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ViewSelection from "./ViewSelection";
 import ProductsOrder from "./ProductsOrder";
 import ProductItems from "./ProductItems";
 
+/* Products Main Page */
 const Products = () => {
+  const [orderBy, setOrderBy] = useState("");
+
+  const handleOrderChange = (value) => {
+    setOrderBy(value);
+  };
+
   return (
     <section id="products" className="border-t-2 border-sky-200">
       {/* Filter Button */}
@@ -16,7 +23,7 @@ const Products = () => {
 
       {/* Filters */}
       <div className="flex items-center justify-between w-full mt-6">
-        <ProductsOrder />
+        <ProductsOrder onOrderChange={handleOrderChange} />
         {/* Select Views */}
         <div className="flex gap-3">
           <ViewSelection />
@@ -25,7 +32,7 @@ const Products = () => {
 
       {/* Products */}
       <div className="mt-10">
-        <ProductItems />
+        <ProductItems orderBy={orderBy} />
       </div>
     </section>
   );

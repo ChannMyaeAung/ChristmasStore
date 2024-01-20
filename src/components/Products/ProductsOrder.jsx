@@ -1,29 +1,39 @@
 import React from "react";
 
-const ProductsOrder = () => {
+const ProductsOrder = ({ onOrderChange }) => {
+  const handleChange = (e) => {
+    const selectedValue = e.target.value;
+    onOrderChange(selectedValue);
+  };
+
   return (
     <>
-      <div
-        id="order__by"
-        className="flex items-center gap-3 px-3 py-1 transition-all border rounded-md cursor-pointer border-sky-200 hover:bg-sky-200"
-      >
-        <p className="text-sm font-medium uppercase">Order By</p>
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+      <div id="order__by" className="">
+        <div className="">
+          <select
+            name="productsOrder"
+            id="productsOrder"
+            className="w-full px-1.5 py-2 text-sm border rounded-md outline-none cursor-pointer"
+            onChange={handleChange}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m19.5 8.25-7.5 7.5-7.5-7.5"
-            />
-          </svg>
-        </button>
+            <option value="">ORDER BY</option>
+            <option value="popular" className="">
+              POPULAR
+            </option>
+            <option value="recommended" className="">
+              RECOMMENDED
+            </option>
+            <option value="LowToHigh" className="w-full">
+              PRICE LOW TO HIGH
+            </option>
+            <option value="HighToLow" className="">
+              PRICE HIGH TO LOW
+            </option>
+            <option value="sales" className="">
+              SALES
+            </option>
+          </select>
+        </div>
       </div>
     </>
   );

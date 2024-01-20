@@ -29,7 +29,7 @@ const itemVariants = {
 const NavItems = ({ open }) => {
   return (
     <>
-      {/* Mobile Nav Links */}
+      {/* Nav Links */}
       <motion.ul
         variants={variants}
         className="flex flex-col items-center py-12 overflow-hidden font-medium text-black rounded-sm md:flex-row gap-7"
@@ -48,7 +48,7 @@ const NavItems = ({ open }) => {
             viewport={{ amount: 0 }}
             className={`${
               open ? "flex " : "hidden"
-            } items-center text-white gap-3 transition-all cursor-pointer translate-y-0 md:flex`}
+            } items-center text-white gap-3 md:text-slate-950 transition-all cursor-pointer translate-y-0 md:flex`}
           >
             {link.icon ? (
               <i className="w-6 h-6">
@@ -64,6 +64,8 @@ const NavItems = ({ open }) => {
           </motion.li>
         ))}
       </motion.ul>
+
+      {/* Desktop Navlinks (768px and above) */}
     </>
   );
 };
