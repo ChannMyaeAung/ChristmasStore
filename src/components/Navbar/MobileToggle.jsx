@@ -1,12 +1,11 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import NavItems from "./NavItems";
+import MobileMenu from "./MobileMenu";
 
 /* Responsible for toggling nav menu on small screens */
 const MobileToggle = () => {
   const [open, setOpen] = useState(false);
-
-  const navMenuRef = useRef(null);
 
   function toggleNav() {
     setOpen((s) => !s);
@@ -54,22 +53,7 @@ const MobileToggle = () => {
         </svg>
       </button>
       {/* Nav Links Modal on mobile screens */}
-      <motion.div
-        ref={navMenuRef}
-        animate={open ? "open" : "closed"}
-        className="fixed left-0 right-0 w-11/12 max-w-xs mx-auto overflow-hidden bg-green-500 rounded-md shadow-lg top-40 md:hidden"
-        variants={{
-          closed: { opacity: 0, y: -100, pointerEvents: "none" },
-          open: { opacity: 1, y: 0, x: 0, pointerEvents: "auto" },
-        }}
-        initial="closed"
-        transition={{ duration: 0.3 }}
-        aria-label="Menu Links on Mobile screens"
-        aria-expanded={open}
-        aria-hidden={open}
-      >
-        <NavItems open={open} />
-      </motion.div>
+      <MobileMenu open={open} />
     </motion.div>
   );
 };

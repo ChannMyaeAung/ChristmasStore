@@ -8,21 +8,6 @@ const Hero = () => {
   // Create an array of state values, one for each item in heroContent
   const [showIcons, setShowIcons] = useState(heroContent.map(() => false));
 
-  /* Responsible for toggling the visibility of the icons */
-  const displayIcons = (index) => {
-    /* If the index of the item being hovered over and the index of state arr are equal, change that index arr item of state to be true, otherwise leave it 'false' */
-    setShowIcons((arr) => {
-      return arr.map((state, idx) => (idx === index ? true : state));
-    });
-  };
-
-  const hideIcons = (index) => {
-    /* If the mouse leave, set the state of that item back to 'false' */
-    setShowIcons((arr) => {
-      return arr.map((state, idx) => (idx === index ? false : state));
-    });
-  };
-
   const toggleIconVisibility = (index) => {
     setShowIcons((arr) => {
       return arr.map((state, idx) => (idx === index ? !state : state));
@@ -35,8 +20,6 @@ const Hero = () => {
           <motion.div
             key={item.id}
             onClick={() => toggleIconVisibility(index)}
-            /* onMouseEnter={() => displayIcons(index)}
-          onMouseLeave={() => hideIcons(index)} */
             className="relative w-full h-full mx-auto cursor-pointer"
           >
             {/* Image */}

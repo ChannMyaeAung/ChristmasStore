@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Announcement from "./Announcement";
 import MobileToggle from "./MobileToggle";
-import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import NavItems from "./NavItems";
+import SearchResultsContainer from "./SearchBar/SearchResultsContainer";
 
 /* Main Navbar Component */
 const Navbar = () => {

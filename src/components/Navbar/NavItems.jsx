@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { navLinks } from "./navLinks";
 
@@ -38,8 +38,6 @@ const NavItems = ({ open }) => {
           <motion.li
             key={link.id}
             variants={itemVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
             transition={{
               delay: 0.25 * index,
               ease: "easeIn",
@@ -48,7 +46,7 @@ const NavItems = ({ open }) => {
             viewport={{ amount: 0 }}
             className={`${
               open ? "flex " : "hidden"
-            } items-center text-white gap-3 md:text-slate-950 transition-all cursor-pointer translate-y-0 md:flex`}
+            } items-center text-white gap-3 md:text-slate-950 transition-all cursor-pointer translate-y-0 md:flex `}
           >
             {link.icon ? (
               <i className="w-6 h-6">
@@ -60,12 +58,15 @@ const NavItems = ({ open }) => {
               </i>
             ) : null}
 
-            <a href={`${link.href}`}>{link.title}</a>
+            <a
+              href={`${link.href} `}
+              className="transition-all md:hover:text-red-600 md:focus:text-red-600 hover:scale-110 focus:scale-110"
+            >
+              {link.title}
+            </a>
           </motion.li>
         ))}
       </motion.ul>
-
-      {/* Desktop Navlinks (768px and above) */}
     </>
   );
 };
