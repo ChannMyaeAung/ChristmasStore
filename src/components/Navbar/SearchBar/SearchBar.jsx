@@ -44,7 +44,7 @@ const SearchBar = () => {
             />
           </svg>
         </i>
-        {isSearching && (
+        {isSearching && searchValue !== "" && (
           <button
             className="absolute text-red-700 top-2 right-3"
             onClick={handleClose}
@@ -53,7 +53,12 @@ const SearchBar = () => {
           </button>
         )}
       </form>
-      {isSearching && <SearchResultsContainer searchValue={searchValue} />}
+      {isSearching && (
+        <SearchResultsContainer
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
+      )}
     </>
   );
 };

@@ -2,7 +2,10 @@ import React from "react";
 
 const Product = ({ product }) => {
   return (
-    <div className="flex flex-col items-center w-full gap-6 mx-auto mb-3 md:items-start md:flex-row md:w-3/4">
+    <div
+      id={product.id}
+      className="flex flex-col items-center w-full gap-6 mx-auto mb-3 md:items-start md:flex-row md:w-3/4"
+    >
       <figure className="relative flex-shrink-0 w-3/4 p-6 aspect-video md:w-48 md:h-48 rounded-xl bg-slate-100">
         <img
           src={product.img}

@@ -8,6 +8,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 /* Custom scrollbar for body and shop products section */
 body::-webkit-scrollbar {
   width: 0.75em;
