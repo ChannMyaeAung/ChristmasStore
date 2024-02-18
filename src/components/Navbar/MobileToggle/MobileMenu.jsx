@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import NavItems from "./NavItems";
+import NavItems from "../NavItems";
 
 export default function MobileMenu({ open }) {
   const navMenuRef = useRef(null);

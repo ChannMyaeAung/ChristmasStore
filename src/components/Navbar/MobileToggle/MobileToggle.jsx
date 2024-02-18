@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import NavItems from "./NavItems";
+import NavItems from "../NavItems";
 import MobileMenu from "./MobileMenu";
 
 /* Responsible for toggling nav menu on small screens */

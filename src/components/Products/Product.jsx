@@ -1,6 +1,8 @@
 import React from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const Product = ({ product }) => {
+  const notifyAddToCart = () => toast("Item successfully added to the cart");
+
   return (
     <div
       id={product.id}
@@ -12,6 +14,7 @@ const Product = ({ product }) => {
           alt={product.title}
           className="object-contain w-16 h-full mx-auto"
         />
+        {/* Dynamically render product status */}
         {product.status !== null && (
           <figcaption
             className={`absolute top-0 left-0 text-white px-2.5 rounded-tl-lg text-sm lg:text-base font-semibold uppercase ${
@@ -25,7 +28,8 @@ const Product = ({ product }) => {
       <div className="flex flex-col items-center w-full h-full gap-4 overflow-hidden text-center md:text-start md:items-start md:gap-2">
         <h3 className="text-xl font-semibold">{product.title}</h3>
         <span className="flex items-center gap-3 text-lg font-bold">
-          ${Number(product.price).toFixed(2)}
+          {/* Display the discount price if any */}$
+          {Number(product.price).toFixed(2)}
           {product.originalPrice && (
             <span className="font-semibold text-gray-400 line-through">
               ${product.originalPrice}
@@ -38,7 +42,10 @@ const Product = ({ product }) => {
         >
           {product.desc}
         </p>
-        <button className="flex items-center px-2 py-2.5 gap-4 text-white w-fit rounded-md bg-cyan-600 transition-all hover:bg-cyan-900">
+        <button
+          className="flex items-center px-2 py-2.5 gap-4 text-white w-fit rounded-md bg-cyan-600 transition-all hover:bg-cyan-900"
+          onClick={notifyAddToCart}
+        >
           <span className="text-sm">Add to cart</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +62,25 @@ const Product = ({ product }) => {
             />
           </svg>
         </button>
+        <Toaster
+          toastOptions={{
+            success: {
+              style: {
+                background: "green",
+              },
+              iconTheme: {
+                primary: "green",
+                secondary: "black",
+              },
+            },
+            icon: "✅",
+            error: {
+              style: {
+                background: "red",
+              },
+            },
+          }}
+        />
       </div>
     </div>
   );
