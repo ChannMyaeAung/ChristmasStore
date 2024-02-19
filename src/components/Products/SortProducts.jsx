@@ -2,7 +2,7 @@ import React from "react";
 import { products } from "./productdata";
 import Product from "./Product";
 
-const ProductItems = ({ orderBy }) => {
+const SortProducts = ({ orderBy }) => {
   /* Sort according to filter selection */
   let sortedProducts = [...products];
 
@@ -58,4 +58,4 @@ const ProductItems = ({ orderBy }) => {
   );
 };
 
-export default ProductItems;
+export default SortProducts;

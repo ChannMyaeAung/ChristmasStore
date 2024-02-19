@@ -41,7 +41,7 @@ const Navbar = () => {
             <NavItems />
           </div>
           {/* Shopping Bag/Cart */}
-          <div>
+          <div className="relative ">
             <ShopCart />
           </div>
         </div>

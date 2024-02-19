@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ViewSelection from "./ViewSelection";
 import ProductsOrder from "./ProductsOrder";
-import ProductItems from "./ProductItems";
+import SortProducts from "./SortProducts";
 
 /* Products Main Page */
 const Products = () => {
@@ -32,7 +32,7 @@ const Products = () => {
 
       {/* Products */}
       <div className="mt-10">
-        <ProductItems orderBy={orderBy} />
+        <SortProducts orderBy={orderBy} />
       </div>
     </section>
   );

@@ -1,5 +1,8 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+
+/* Responsible for rendering every single products */
+
 const Product = ({ product }) => {
   const notifyAddToCart = () => toast("Item successfully added to the cart");
 

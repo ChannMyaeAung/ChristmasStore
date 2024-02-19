@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ShopCartContext } from "../../../ShopCartContextProvider";
+import { motion } from "framer-motion";
+import CartModal from "./CartModal";
 
 export default function ShopCart() {
-  const [shopBag, setShopBag] = useState(["arr", "reee", "rew"]);
+  const { shopBag, setShopBag } = useContext(ShopCartContext);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const variants = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+    },
+  };
   return (
     <>
-      <button className="relative">
+      <button className="relative" onClick={() => setIsOpen((s) => !s)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -24,6 +39,15 @@ export default function ShopCart() {
           {shopBag.length}
         </span>
       </button>
+      <motion.div
+        variants={variants}
+        initial="initial"
+        animate={isOpen ? "show" : "initial"}
+        className="fixed z-50 w-3/4 h-full overflow-hidden rounded-lg shadow-lg right-4"
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <CartModal setIsOpen={setIsOpen} />
+      </motion.div>
     </>
   );
 }
