@@ -11,7 +11,7 @@ export default function ShopCart() {
   const variants = {
     initial: {
       opacity: 0,
-      x: 100,
+      x: 1000,
     },
     show: {
       opacity: 1,
@@ -43,7 +43,7 @@ export default function ShopCart() {
         variants={variants}
         initial="initial"
         animate={isOpen ? "show" : "initial"}
-        className="fixed z-50 w-3/4 h-full overflow-hidden rounded-lg shadow-lg right-4"
+        className="fixed z-50 w-3/4 overflow-hidden rounded-lg shadow-lg right-4"
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <CartModal setIsOpen={setIsOpen} />

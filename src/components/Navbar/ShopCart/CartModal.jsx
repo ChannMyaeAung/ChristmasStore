@@ -3,13 +3,13 @@ import CartItems from "./CartItems";
 export default function CartModal({ setIsOpen }) {
   return (
     <div className="p-4 space-y-12 bg-neutral-200">
-      <div className="flex items-center justify-between ">
-        <h2>Your cart</h2>
+      <div className="flex items-center justify-between text-lg ">
+        <h2 className="font-semibold">Your cart</h2>
         <button
-          className="text-lg transition-all hover:text-red-500"
+          className="transition-all hover:text-red-500"
           onClick={() => setIsOpen(false)}
         >
-          x
+          &#10006;
         </button>
       </div>
 
@@ -18,7 +18,7 @@ export default function CartModal({ setIsOpen }) {
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center justify-between border-t border-b border-red-500">
+        <div className="flex items-center justify-between py-1 border-t border-b border-red-500">
           <span>Subtotal</span>
           <span>$0.00</span>
         </div>
