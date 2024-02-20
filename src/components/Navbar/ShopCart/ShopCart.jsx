@@ -43,10 +43,15 @@ export default function ShopCart() {
         variants={variants}
         initial="initial"
         animate={isOpen ? "show" : "initial"}
-        className="fixed z-50 w-3/4 overflow-hidden rounded-lg shadow-lg right-4"
+        className="fixed z-50 w-2/3 overflow-x-hidden overflow-y-scroll rounded-lg shadow-lg h-fit top-20 max-w-96 right-1"
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <CartModal setIsOpen={setIsOpen} />
+        <CartModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          shopBag={shopBag}
+          setShopBag={setShopBag}
+        />
       </motion.div>
     </>
   );

@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { ShopCartContext } from "../../ShopCartContextProvider";
 
 /* Responsible for rendering every single products */
 
 const Product = ({ product }) => {
-  const notifyAddToCart = () => toast("Item successfully added to the cart");
+  const { shopBag, setShopBag } = useContext(ShopCartContext);
+
+  function addToCart() {
+    const isItemInCart = shopBag.some((item) => item.id === product.id);
+
+    if (isItemInCart) {
+      toast.error("Item is already in cart");
+      return;
+    }
+
+    toast.success("Item successfully added to the cart");
+    setShopBag((prev) => [
+      ...prev,
+      {
+        id: product.id,
+        img: product.img,
+        title: product.title,
+        price: product.price,
+        count: 1,
+      },
+    ]);
+  }
 
   return (
     <div
@@ -47,7 +69,7 @@ const Product = ({ product }) => {
         </p>
         <button
           className="flex items-center px-2 py-2.5 gap-4 text-white w-fit rounded-md bg-cyan-600 transition-all hover:bg-cyan-900"
-          onClick={notifyAddToCart}
+          onClick={addToCart}
         >
           <span className="text-sm">Add to cart</span>
           <svg
@@ -65,25 +87,7 @@ const Product = ({ product }) => {
             />
           </svg>
         </button>
-        <Toaster
-          toastOptions={{
-            success: {
-              style: {
-                background: "green",
-              },
-              iconTheme: {
-                primary: "green",
-                secondary: "black",
-              },
-            },
-            icon: "✅",
-            error: {
-              style: {
-                background: "red",
-              },
-            },
-          }}
-        />
+        <Toaster toastOptions={{}} />
       </div>
     </div>
   );
