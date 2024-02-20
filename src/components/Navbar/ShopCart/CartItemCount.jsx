@@ -26,7 +26,7 @@ export default function CartItemCount({ item }) {
       </button>
       <input
         type="number"
-        className="w-6 h-6 text-center"
+        className="self-center w-10 h-6 text-center"
         value={count}
         onChange={(e) => handleCountChange(parseInt(e.target.value))}
       />
