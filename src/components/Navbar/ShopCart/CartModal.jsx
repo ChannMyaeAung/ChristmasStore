@@ -22,7 +22,7 @@ export default function CartModal({ isOpen, setIsOpen, shopBag, setShopBag }) {
         id="cart-items"
         className="flex flex-col h-48 overflow-y-scroll gap-7"
       >
-        <CartItems shopBag={shopBag} />
+        <CartItems shopBag={shopBag} setShopBag={setShopBag} />
       </div>
 
       <SubTotal />

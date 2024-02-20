@@ -6,7 +6,6 @@ export default function CartItemCount({ item }) {
   const { shopBag, setShopBag } = useContext(ShopCartContext);
   const [count, setCount] = useState(1);
 
-  console.log(shopBag);
   function handleCountChange(newCount) {
     setCount(newCount);
     setShopBag((prevBag) =>

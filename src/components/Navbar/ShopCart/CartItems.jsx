@@ -2,7 +2,11 @@
 import React, { Fragment } from "react";
 import CartItemCount from "./CartItemCount";
 
-export default function CartItems({ shopBag }) {
+export default function CartItems({ shopBag, setShopBag }) {
+  function removeItem(id) {
+    setShopBag((prevBag) => prevBag.filter((item) => item.id !== id));
+  }
+
   function findCurrentItem(itemId) {
     const curr = shopBag.find((bag) => bag.id === itemId);
     return curr.count;
